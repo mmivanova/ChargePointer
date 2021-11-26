@@ -6,6 +6,6 @@ namespace ChargePointer.Presentation.Models.ChargePointModel
 {
     public class ChargePointResponseModel
     {
-        public List<ChargePoint> Type { get; set; }
+        public List<ChargePoint> ChargePoints { get; set; }
     }
 }

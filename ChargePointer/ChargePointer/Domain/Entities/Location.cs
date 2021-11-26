@@ -10,7 +10,8 @@ namespace ChargePointer.Domain.Entities
         [StringLength(39, ErrorMessage = "The {0} value cannot exceed {1} characters. ")]  
         public string LocationId { get; set; }
 
-        public Type Type { get; set; }
+        [Required]
+        public string Type { get; set; }
 
         [StringLength(255, ErrorMessage = "The {0} value cannot exceed {1} characters. ")]  
         public string Name { get; set; }
