@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using ChargePointer.Domain.Entities;
-using Type = ChargePointer.Domain.Entities.Type;
 
 namespace ChargePointer.Presentation.Models.LocationModel
 {
@@ -12,9 +11,8 @@ namespace ChargePointer.Presentation.Models.LocationModel
         public string LocationId { get; set; }
         
         [Required]
-        [StringLength(45, ErrorMessage = "The {0} value cannot exceed {1} characters. ")]
-        [EnumDataType(typeof(TypeId))]
-        public TypeId Type { get; set; }
+        [RegularExpression("Parking|Airport|OnStreet|Unknown")]
+        public string Type { get; set; }
         
         [StringLength(255, ErrorMessage = "The {0} value cannot exceed {1} characters. ")]
         public string Name { get; set; }

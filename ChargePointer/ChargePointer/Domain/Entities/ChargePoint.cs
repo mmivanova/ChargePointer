@@ -10,7 +10,8 @@ namespace ChargePointer.Domain.Entities
         public string ChargePointId { get; set; }
 
         [Required]
-        public Status Status { get; set; }
+        [RegularExpression("Available|Blocked|Charging|Removed|Reserved|Unknown")]
+        public string Status { get; set; }
         
         [StringLength(4, ErrorMessage = "The {0} value cannot exceed {1} characters. ")]
         public string FloorLevel { get; set; }

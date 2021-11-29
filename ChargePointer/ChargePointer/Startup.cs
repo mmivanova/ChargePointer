@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using ChargePointer.Data;
+using ChargePointer.Mapper;
 using ChargePointer.Repositories;
 using ChargePointer.Repositories.ChargePointRepository;
 using ChargePointer.Repositories.LocationRepository;
@@ -38,6 +40,14 @@ namespace ChargePointer
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChargePointer", Version = "v1" });
             });
+
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+            
+            var mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
             
             services.AddDbContext<ChargePointerDbContext>(
                 options => options.UseSqlServer("name=ConnectionStrings:Default"));

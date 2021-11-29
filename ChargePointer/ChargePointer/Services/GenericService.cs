@@ -15,27 +15,27 @@ namespace ChargePointer.Services
 
         public T Get(PK id)
         {
-            throw new System.NotImplementedException();
+            return _repository.Get(id);
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new System.NotImplementedException();
+            return _repository.GetAll();
         }
 
         public void Create(T t)
         {
-            throw new System.NotImplementedException();
+            _repository.Create(t);
         }
 
         public void Update(T t)
         {
-            throw new System.NotImplementedException();
+            _repository.Update(t);
         }
 
         public void Delete(PK id)
         {
-            throw new System.NotImplementedException();
+            _repository.Delete(id);
         }
     }
 }
