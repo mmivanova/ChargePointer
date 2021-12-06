@@ -1,5 +1,6 @@
 ﻿using ChargePointer.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ChargePointer.Data
 {

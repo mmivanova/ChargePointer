@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ChargePointer.Presentation.Models.LocationModel
 {
-    public class PatchLocationRequestModel
+    public class PatchLocationRequestModel 
     {
         [Required]
         [StringLength(39, ErrorMessage = "The {0} value cannot exceed {1} characters. ")]

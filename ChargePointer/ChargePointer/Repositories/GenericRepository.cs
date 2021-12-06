@@ -29,15 +29,15 @@ namespace ChargePointer.Repositories
             return _table.ToList();
         }
 
-        public void Create(T t)
+        public virtual void Create(T t)
         {
             _table.Add(t);
             _dbContext.SaveChanges();
         }
 
-        public void Update(T t)
+        public virtual void Update(T t)
         {
-            var entity = _table.Find(t);
+            var entity = _dbContext.Entry(t);
             if (entity is null)
             {
                 throw new InvalidOperationException("This object does not exist.");

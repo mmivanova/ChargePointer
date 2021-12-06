@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using ChargePointer.Domain.Entities;
+using ChargePointer.Presentation.Models.ChargePointModel;
 using ChargePointer.Presentation.Models.LocationModel;
 using ChargePointer.Services.LocationService;
-using Microsoft.AspNetCore.Mvc;
+
 
 namespace ChargePointer.Controllers
 {
@@ -22,7 +25,7 @@ namespace ChargePointer.Controllers
         }
         
         [HttpGet]
-        public List<LocationResponseModel> Get()
+        public List<LocationResponseModel> GetAll()
         {
             var locations = _locationService
                 .GetAll()
@@ -49,5 +52,26 @@ namespace ChargePointer.Controllers
             _locationService.Create(location);
         }
         
+        [HttpPatch]
+        [Route("{locationId}")]
+        public void PatchUpdate([FromRoute]string locationId, [FromBody] PatchLocationRequestModel patchLocationRequestModel)
+        {
+            try
+            {
+                _locationService.PatchUpdate(locationId, patchLocationRequestModel);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        [HttpPut]
+        [Route("{locationId}")]
+        public void UpdateChargePoints(string locationId, [FromBody] List<ChargePointRequestModel> chargePoints)
+        {
+            
+        }
     }
 }
