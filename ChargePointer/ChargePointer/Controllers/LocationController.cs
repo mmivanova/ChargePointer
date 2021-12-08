@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using ChargePointer.Domain.Entities;
 using ChargePointer.Presentation.Models.ChargePointModel;
 using ChargePointer.Presentation.Models.LocationModel;
+using ChargePointer.Services.ChargePointService;
 using ChargePointer.Services.LocationService;
 
 
@@ -16,11 +17,13 @@ namespace ChargePointer.Controllers
     public class LocationController 
     {
         private readonly ILocationService _locationService;
+        private readonly IChargePointService _chargePointService;
         private readonly IMapper _mapper;
 
-        public LocationController(ILocationService locationService, IMapper mapper)
+        public LocationController(ILocationService locationService, IChargePointService chargePointService, IMapper mapper)
         {
             _locationService = locationService;
+            _chargePointService = chargePointService;
             _mapper = mapper;
         }
         
@@ -69,9 +72,11 @@ namespace ChargePointer.Controllers
 
         [HttpPut]
         [Route("{locationId}")]
-        public void UpdateChargePoints(string locationId, [FromBody] List<ChargePointRequestModel> chargePoints)
+        public List<ChargePoint> UpdateChargePoints(string locationId, [FromBody] ChargePointRequestModel chargePointRequestModel)
         {
+            var chargePoints = chargePointRequestModel.ChargePoints;
             
+            return _locationService.UpdateChargePoints(locationId, chargePoints);
         }
     }
 }

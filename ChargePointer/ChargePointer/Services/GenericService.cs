@@ -13,7 +13,7 @@ namespace ChargePointer.Services
             _repository = repository;
         }
 
-        public T Get(PK id)
+        public virtual T Get(PK id)
         {
             return _repository.Get(id);
         }

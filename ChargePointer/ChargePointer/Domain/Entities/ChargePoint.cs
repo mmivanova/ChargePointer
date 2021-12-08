@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
 
 namespace ChargePointer.Domain.Entities
 {
@@ -18,5 +20,8 @@ namespace ChargePointer.Domain.Entities
         
         [Required]
         public DateTime LastUpdated { get; set; }
+
+        [JsonIgnore]
+        public string LocationId { get; set; }
     }
 }

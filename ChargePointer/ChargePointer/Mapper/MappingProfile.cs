@@ -14,8 +14,9 @@ namespace ChargePointer.Mapper
             CreateMap<PatchLocationRequestModel, Location>()
                 .ForAllMembers(opts => opts
                     .Condition((_, _, srcMember) => srcMember != null));
+            
             CreateMap<ChargePointRequestModel, ChargePoint>();
-
+            CreateMap<ChargePoint, ChargePointResponseModel>();
         }
     }
 }

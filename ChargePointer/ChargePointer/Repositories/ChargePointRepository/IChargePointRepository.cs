@@ -4,6 +4,6 @@ namespace ChargePointer.Repositories.ChargePointRepository
 {
     public interface IChargePointRepository : IRepository<ChargePoint, string>
     {
-        
+        void Update(string chargePointId);
     }
 }

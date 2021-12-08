@@ -1,4 +1,7 @@
-﻿namespace ChargePointer.Presentation.Models.LocationModel
+﻿using System.Collections.Generic;
+using ChargePointer.Domain.Entities;
+
+namespace ChargePointer.Presentation.Models.LocationModel
 {
     public class LocationResponseModel
     {
@@ -8,5 +11,6 @@
         public string City { get; set; }
         public string PostalCode { get; set; }
         public string Country { get; set; }
+        public List<ChargePoint> ChargePoints { get; set; }
     }
 }

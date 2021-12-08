@@ -18,7 +18,7 @@ namespace ChargePointer.Repositories
             _table = _dbContext.Set<T>();
         }
 
-        public T Get(PK id)
+        public virtual T Get(PK id)
         {
             var entity = _table.Find(id);
             return entity;
