@@ -1,4 +1,5 @@
-﻿using ChargePointer.Domain.Entities;
+﻿using System.Collections.Generic;
+using ChargePointer.Domain.Entities;
 using ChargePointer.Presentation.Models.LocationModel;
 
 namespace ChargePointer.Repositories.LocationRepository

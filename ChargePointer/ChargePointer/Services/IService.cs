@@ -8,7 +8,7 @@ namespace ChargePointer.Services
         T Get(PK id);
         IEnumerable<T> GetAll();
         void Create(T t);
-        void Update(T t);
+        void Update(T chargePoint);
         void Delete(PK id);
     }
 }

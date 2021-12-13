@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using ChargePointer.Data;
 using ChargePointer.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -18,14 +20,15 @@ namespace ChargePointer.Repositories.LocationRepository
 
         public void PatchUpdate(Location locationToUpdate)
         {
-            
             if (locationToUpdate is null || _table.Find(locationToUpdate.LocationId) is null)
             {
                 throw new InvalidOperationException("This object does not exist.");
             }
-            
+
             _table.Update(locationToUpdate);
             _dbContext.SaveChanges();
         }
+
+       
     }
 }

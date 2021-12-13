@@ -17,6 +17,7 @@ namespace ChargePointer.Mapper
             
             CreateMap<ChargePointRequestModel, ChargePoint>();
             CreateMap<ChargePoint, ChargePointResponseModel>();
+            CreateMap<ChargePoint, ChargePoint>();
         }
     }
 }

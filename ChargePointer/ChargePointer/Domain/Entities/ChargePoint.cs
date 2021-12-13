@@ -23,5 +23,21 @@ namespace ChargePointer.Domain.Entities
 
         [JsonIgnore]
         public string LocationId { get; set; }
+
+        // public override bool Equals(object obj)
+        // {
+        //     var chargePoint = obj as ChargePoint;
+        //     return this.ChargePointId ==  chargePoint.ChargePointId;
+        // }
+
+        protected bool Equals(ChargePoint other)
+        {
+            return ChargePointId == other.ChargePointId;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ChargePointId, Status, FloorLevel, LastUpdated, LocationId);
+        }
     }
 }

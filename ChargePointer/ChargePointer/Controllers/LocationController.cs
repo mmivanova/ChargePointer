@@ -76,7 +76,7 @@ namespace ChargePointer.Controllers
         {
             var chargePoints = chargePointRequestModel.ChargePoints;
             
-            return _locationService.UpdateChargePoints(locationId, chargePoints);
+            return _locationService.UpdateLocationChargePoints(chargePointRequestModel);
         }
     }
 }

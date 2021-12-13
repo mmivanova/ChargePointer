@@ -28,7 +28,7 @@ namespace ChargePointer.Services
             _repository.Create(t);
         }
 
-        public void Update(T t)
+        public virtual void Update(T t)
         {
             _repository.Update(t);
         }

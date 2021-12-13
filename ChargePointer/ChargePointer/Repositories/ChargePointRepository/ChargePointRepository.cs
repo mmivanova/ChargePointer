@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using ChargePointer.Data;
 using ChargePointer.Domain.Entities;
 using ChargePointer.Services.LocationService;
@@ -23,6 +25,14 @@ namespace ChargePointer.Repositories.ChargePointRepository
         {
             var chargePoint = _table.Find(chargePointId);
             Update(chargePoint);
+        }
+        
+        public List<ChargePoint> GetChargePointsByLocationId(string locationId)
+        {
+            var chargePoints = _table.FromSqlRaw($@"  SELECT cp.ChargePointId, cp.FloorLevel, cp.[Status], cp.LastUpdated, cp.LocationId
+                                    from [dbo].[ChargePoints] cp
+                                    where cp.LocationId = '{locationId}';").ToList();
+            return chargePoints;
         }
     }
 }

@@ -59,7 +59,7 @@ namespace ChargePointer.Migrations
                 name: "ChargePoints",
                 columns: table => new
                 {
-                    ChargePointId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ChargePointId = table.Column<string>(type: "nvarchar(39)", nullable: false),
                     StatusId = table.Column<int>(type: "int", nullable: true),
                     FloorLevel = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: true),
                     LastUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),

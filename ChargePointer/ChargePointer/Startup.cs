@@ -1,24 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using ChargePointer.Data;
 using ChargePointer.Mapper;
-using ChargePointer.Repositories;
 using ChargePointer.Repositories.ChargePointRepository;
 using ChargePointer.Repositories.LocationRepository;
 using ChargePointer.Services.ChargePointService;
 using ChargePointer.Services.LocationService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace ChargePointer

@@ -26,14 +26,14 @@ namespace ChargePointer.Migrations
                 nullable: false,
                 defaultValue: "");
 
-            migrationBuilder.AlterColumn<string>(
-                name: "ChargePointId",
-                table: "ChargePoints",
-                type: "nvarchar(39)",
-                maxLength: 39,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(450)");
+            // migrationBuilder.AlterColumn<string>(
+            //     name: "ChargePointId",
+            //     table: "ChargePoints",
+            //     type: "nvarchar(39)",
+            //     maxLength: 39,
+            //     nullable: false,
+            //     oldClrType: typeof(string),
+            //     oldType: "nvarchar(450)");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

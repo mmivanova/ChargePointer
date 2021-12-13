@@ -1,11 +1,11 @@
-﻿using ChargePointer.Domain.Entities;
-using ChargePointer.Presentation.Models.ChargePointModel;
+﻿using System.Collections.Generic;
+using ChargePointer.Domain.Entities;
 
 namespace ChargePointer.Services.ChargePointService
 {
     public interface IChargePointService : IService<ChargePoint, string>
     {
         void Create(string locationId, ChargePoint chargePoint);
-        void Update(string chargePointId);
+        List<ChargePoint> GetChargePointsByLocationId(string locationId);
     }
 }
