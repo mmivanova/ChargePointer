@@ -38,59 +38,9 @@ namespace ChargePointer.Services.LocationService
         
         public List<ChargePoint> UpdateLocationChargePoints(ChargePointRequestModel chargePointRequestModel)
         {
-            UpdateChargePoints(chargePointRequestModel);
-            CreateNewChargePointsForLocation(chargePointRequestModel);
+            _chargePointService.UpdateChargePoints(chargePointRequestModel);
+            _chargePointService.CreateNewChargePointsForLocation(chargePointRequestModel);
             return _chargePointService.GetAll().ToList();
-        }
-
-        private List<ChargePoint> GetChargePointsThatAreNotInRequestModel(
-            ChargePointRequestModel chargePointRequestModel)
-        {
-            var databaseChargePoints = GetChargePointsByLocationId(chargePointRequestModel.LocationId);
-
-            if (databaseChargePoints is null)
-            {
-                return new List<ChargePoint>();
-            }
-            
-            var list = databaseChargePoints
-                .Where(dbcp => chargePointRequestModel.ChargePoints.All(rmcp => rmcp.ChargePointId != dbcp.ChargePointId))
-                .ToList();
-
-            return list;
-            
-        }
-
-        private void SetStatusToRemovedToChargePoints(List<ChargePoint> chargePointsToRemove)
-        {
-            foreach (var chargePoint in chargePointsToRemove)
-            {
-                chargePoint.Status = "Removed";
-            }
-        }
-
-        private List<ChargePoint> GetChargePointsToBeRemoved(ChargePointRequestModel chargePointRequestModel)
-        {
-            var chargePointsToRemove = GetChargePointsThatAreNotInRequestModel(chargePointRequestModel);
-            SetStatusToRemovedToChargePoints(chargePointsToRemove);
-            return chargePointsToRemove;
-        }
-
-        private List<ChargePoint> GetChargePointsThatAreNotInDatabase(
-            ChargePointRequestModel chargePointRequestModel)
-        {
-            var databaseChargePoints = GetChargePointsByLocationId(chargePointRequestModel.LocationId);
-
-            if (databaseChargePoints is null || databaseChargePoints.Count == 0)
-            {
-                return chargePointRequestModel.ChargePoints;
-            }
-
-            var list = chargePointRequestModel.ChargePoints
-                .Where(rmcp => databaseChargePoints.All(dbcp => dbcp.ChargePointId != rmcp.ChargePointId))
-                .ToList();
-            
-            return list;
         }
 
         private Location MapPatchLocationModelToLocation(PatchLocationRequestModel patchLocationRequestModel)
@@ -102,55 +52,5 @@ namespace ChargePointer.Services.LocationService
 
             return locationToUpdate;
         }
-
-        private void CreateNewChargePointsForLocation(ChargePointRequestModel chargePointRequestModel)
-        {
-            var chargePoints = GetChargePointsThatAreNotInDatabase(chargePointRequestModel);
-            foreach (var chargePoint in chargePoints)
-            {
-                _chargePointService.Create(chargePointRequestModel.LocationId, chargePoint);
-            }
-        }
-
-        private List<ChargePoint> GetChargePointsToBeUpdated(ChargePointRequestModel chargePointRequestModel)
-        {
-            var chargePointsToUpdate = new List<ChargePoint>();
-            chargePointsToUpdate.AddRange(GetChargePointsToBeRemoved(chargePointRequestModel));
-            chargePointsToUpdate.AddRange(GetExistingChargePointsToBeUpdated(chargePointRequestModel));
-
-            return chargePointsToUpdate;
-        }
-
-        private List<ChargePoint> GetExistingChargePointsToBeUpdated(ChargePointRequestModel chargePointRequestModel)
-        {
-            var databaseChargePoints = GetChargePointsByLocationId(chargePointRequestModel.LocationId);
-
-            if (databaseChargePoints is null || databaseChargePoints.Count == 0)
-            {
-                return new List<ChargePoint>();
-            }
-
-            return chargePointRequestModel.ChargePoints
-                .Intersect(databaseChargePoints, EqualityComparer<ChargePoint>.Default)
-                .ToList();
-        }
-
-        private void UpdateChargePoints(ChargePointRequestModel chargePointRequestModel)
-        {
-            var chargePointsToUpdate = GetChargePointsToBeUpdated(chargePointRequestModel);
-
-            if (chargePointsToUpdate is null) return;
-            foreach (var chargePoint in chargePointsToUpdate)
-            {
-                _chargePointService.Update(chargePoint);
-            }
-        }
-        
-        private List<ChargePoint> GetChargePointsByLocationId(string locationId)
-        {
-            var list = _chargePointService.GetChargePointsByLocationId(locationId);
-            return list;
-        }
-        
     }
 }
