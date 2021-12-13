@@ -25,6 +25,13 @@ namespace ChargePointer.Services.LocationService
             _mapper = mapper;
         }
 
+        public Location GetLocation(string locationId)
+        {
+            var location = _repository.Get(locationId);
+            location.ChargePoints = _chargePointService.GetChargePointsByLocationId(locationId);
+            return location;
+        }
+
         public void PatchUpdate(string id, PatchLocationRequestModel patchLocationRequestModel)
         {
             if (id != patchLocationRequestModel.LocationId)

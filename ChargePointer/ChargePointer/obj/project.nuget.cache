@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XvQzzpMowfXhSFGmT1TkeaYXILHIffimQbU7SCjooFu7lgsVd8/5ZgbfqQnbQVsQ9F7ptzrXSzMxSGVTH6ZvLw==",
+  "dgSpecHash": "ZIz2gHXpkV45KSOrbF+vXUwIgYUtHG12EyFPF4zC1B642v+AQyO7Ev3TqcUR3WmY4LmcEEs+N6paOsnWhRjS0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mihaela Ivanova\\workspaces\\ChargePointer\\ChargePointer\\ChargePointer\\ChargePointer.csproj",
   "expectedPackageFiles": [
@@ -149,10 +149,10 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.2.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.2.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
       "targetGraphs": [
-        "net5.0"
+        "net6.0"
       ]
     }
   ]

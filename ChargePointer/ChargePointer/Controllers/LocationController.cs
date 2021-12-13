@@ -73,9 +73,7 @@ namespace ChargePointer.Controllers
         [HttpPut]
         [Route("{locationId}")]
         public List<ChargePoint> UpdateChargePoints(string locationId, [FromBody] ChargePointRequestModel chargePointRequestModel)
-        {
-            var chargePoints = chargePointRequestModel.ChargePoints;
-            
+        {          
             return _locationService.UpdateLocationChargePoints(chargePointRequestModel);
         }
     }

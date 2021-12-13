@@ -24,7 +24,7 @@ namespace ChargePointer.Repositories
             return entity;
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return _table.ToList();
         }

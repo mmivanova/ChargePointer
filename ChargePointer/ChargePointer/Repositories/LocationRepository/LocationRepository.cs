@@ -18,6 +18,20 @@ namespace ChargePointer.Repositories.LocationRepository
             _table = _dbContext.Locations;
         }
 
+        public override Location Get(string id)
+        {
+            return _table
+                .Include("ChargePoints")
+                .FirstOrDefault();
+        }
+
+        public override List<Location> GetAll()
+        {
+            return _table
+                .Include("ChargePoints")
+                .ToList();
+        }
+
         public void PatchUpdate(Location locationToUpdate)
         {
             if (locationToUpdate is null || _table.Find(locationToUpdate.LocationId) is null)
@@ -29,6 +43,5 @@ namespace ChargePointer.Repositories.LocationRepository
             _dbContext.SaveChanges();
         }
 
-       
     }
 }
