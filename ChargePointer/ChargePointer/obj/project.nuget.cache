@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x4X9kZO9OlBu/PkzgeYRYxaeTupRJujYBQO0SPO/g/AN1q5hi0QB/MsxJ4NFNQKnU7aevcoXRBkL9+EZZ/TNaw==",
+  "dgSpecHash": "XvQzzpMowfXhSFGmT1TkeaYXILHIffimQbU7SCjooFu7lgsVd8/5ZgbfqQnbQVsQ9F7ptzrXSzMxSGVTH6ZvLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mihaela Ivanova\\workspaces\\ChargePointer\\ChargePointer\\ChargePointer\\ChargePointer.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,6 @@
     "C:\\Users\\Mihaela Ivanova\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Mihaela Ivanova\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Mihaela Ivanova\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
-    "C:\\Users\\Mihaela Ivanova\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.0\\microsoft.aspnetcore.jsonpatch.6.0.0.nupkg.sha512",
     "C:\\Users\\Mihaela Ivanova\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Mihaela Ivanova\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Mihaela Ivanova\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

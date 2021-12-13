@@ -35,8 +35,7 @@ namespace ChargePointer.Services.LocationService
             var locationToUpdate = MapPatchLocationModelToLocation(patchLocationRequestModel);
             _repository.PatchUpdate(locationToUpdate);
         }
-
-        //TODO 
+        
         public List<ChargePoint> UpdateLocationChargePoints(ChargePointRequestModel chargePointRequestModel)
         {
             UpdateChargePoints(chargePointRequestModel);
@@ -54,9 +53,11 @@ namespace ChargePointer.Services.LocationService
                 return new List<ChargePoint>();
             }
             
-            var list = databaseChargePoints.Where(p => chargePointRequestModel.ChargePoints.All(p2 => p2.ChargePointId == p.ChargePointId));
+            var list = databaseChargePoints
+                .Where(dbcp => chargePointRequestModel.ChargePoints.All(rmcp => rmcp.ChargePointId != dbcp.ChargePointId))
+                .ToList();
 
-            return list.ToList();
+            return list;
             
         }
 
@@ -85,9 +86,11 @@ namespace ChargePointer.Services.LocationService
                 return chargePointRequestModel.ChargePoints;
             }
 
-            return chargePointRequestModel.ChargePoints
-                .Except(databaseChargePoints, EqualityComparer<ChargePoint>.Default)
+            var list = chargePointRequestModel.ChargePoints
+                .Where(rmcp => databaseChargePoints.All(dbcp => dbcp.ChargePointId != rmcp.ChargePointId))
                 .ToList();
+            
+            return list;
         }
 
         private Location MapPatchLocationModelToLocation(PatchLocationRequestModel patchLocationRequestModel)
@@ -122,8 +125,6 @@ namespace ChargePointer.Services.LocationService
         {
             var databaseChargePoints = GetChargePointsByLocationId(chargePointRequestModel.LocationId);
 
-            //var existingChargePoints =  
-            
             if (databaseChargePoints is null || databaseChargePoints.Count == 0)
             {
                 return new List<ChargePoint>();
@@ -147,7 +148,8 @@ namespace ChargePointer.Services.LocationService
         
         private List<ChargePoint> GetChargePointsByLocationId(string locationId)
         {
-            return _chargePointService.GetChargePointsByLocationId(locationId);
+            var list = _chargePointService.GetChargePointsByLocationId(locationId);
+            return list;
         }
         
     }
