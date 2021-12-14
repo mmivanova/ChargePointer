@@ -22,6 +22,7 @@ namespace ChargePointer.Repositories.LocationRepository
         {
             return _table
                 .Include("ChargePoints")
+                .Where(l => l.LocationId == id)
                 .FirstOrDefault();
         }
 

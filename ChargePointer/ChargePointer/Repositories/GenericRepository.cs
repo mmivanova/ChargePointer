@@ -31,8 +31,17 @@ namespace ChargePointer.Repositories
 
         public virtual void Create(T t)
         {
-            _table.Add(t);
-            _dbContext.SaveChanges();
+            try
+            {
+                _table.Add(t);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
         }
 
         public virtual void Update(T t)

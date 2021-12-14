@@ -88,11 +88,25 @@ namespace ChargePointer.Services.ChargePointService
                 return new List<ChargePoint>();
             }
 
-            return chargePointRequestModel.ChargePoints
-                .Intersect(databaseChargePoints, EqualityComparer<ChargePoint>.Default)
+            var existingChargePoints = chargePointRequestModel.ChargePoints
+                .Join(databaseChargePoints,
+                rmcp => rmcp.ChargePointId,
+                dbcp => dbcp.ChargePointId,
+                (rmcp, dbcp) => rmcp)
                 .ToList();
+
+            SetLocationIdToChargePoints(chargePointRequestModel.LocationId, existingChargePoints);
+
+            return existingChargePoints;
         }
 
+        private static void SetLocationIdToChargePoints(string locationId, List<ChargePoint> existingChargePoints)
+        {
+            foreach (var chargePoint in existingChargePoints)
+            {
+                chargePoint.LocationId = locationId;
+            }
+        }
 
         private List<ChargePoint> GetChargePointsThatAreNotInDatabase(
             ChargePointRequestModel chargePointRequestModel)
@@ -129,8 +143,16 @@ namespace ChargePointer.Services.ChargePointService
 
         private void Create(string locationId, ChargePoint chargePoint)
         {
-            chargePoint.LocationId = locationId;
-            _repository.Create(chargePoint);
+            try
+            {
+                chargePoint.LocationId = locationId;
+                _repository.Create(chargePoint);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         private static void SetStatusToRemovedToChargePoints(List<ChargePoint> chargePointsToRemove)

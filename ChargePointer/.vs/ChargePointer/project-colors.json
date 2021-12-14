@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "688cab7d-b0b2-40d8-9685-e99a6a28aeb4": {
+      "ProjectGuid": "688cab7d-b0b2-40d8-9685-e99a6a28aeb4",
+      "DisplayName": "ChargePointer",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

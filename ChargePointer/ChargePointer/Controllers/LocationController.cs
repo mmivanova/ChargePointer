@@ -14,50 +14,73 @@ namespace ChargePointer.Controllers
 {
     [ApiController]
     [Route("api/locations")]
-    public class LocationController 
+    public class LocationController
     {
         private readonly ILocationService _locationService;
-        private readonly IChargePointService _chargePointService;
         private readonly IMapper _mapper;
 
         public LocationController(ILocationService locationService, IChargePointService chargePointService, IMapper mapper)
         {
             _locationService = locationService;
-            _chargePointService = chargePointService;
             _mapper = mapper;
         }
-        
+
         [HttpGet]
-        public List<LocationResponseModel> GetAll()
+        public ActionResult<List<LocationResponseModel>> GetAll()
         {
-            var locations = _locationService
-                .GetAll()
-                .Select(_mapper.Map<LocationResponseModel>)
-                .ToList();
-            
-            return locations;
+            try
+            {
+                var locations = _locationService
+                                .GetAll()
+                                .Select(_mapper.Map<LocationResponseModel>)
+                                .ToList();
+
+                return new OkObjectResult(locations);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return new BadRequestObjectResult(e.Message);
+            }
+
         }
-        
+
         [HttpGet]
         [Route("{locationId}")]
-        public LocationResponseModel Get([FromRoute]string locationId)
+        public ActionResult<LocationResponseModel> Get([FromRoute] string locationId)
         {
-            var location = _locationService.Get(locationId);
-
-            var responseModel = _mapper.Map<LocationResponseModel>(location);
-            return responseModel;
+            try
+            {
+                var location = _locationService.Get(locationId);
+                var responseModel = _mapper.Map<LocationResponseModel>(location);
+                return new OkObjectResult(responseModel);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return new BadRequestObjectResult(e.Message);
+            }
         }
 
         [HttpPost]
-        public void Create([FromBody] LocationRequestModel locationRequestModel)
+        public IActionResult Create([FromBody] LocationRequestModel locationRequestModel)
         {
-            var location = _mapper.Map<Location>(locationRequestModel);
-            _locationService.Create(location);
+            try
+            {
+                var location = _mapper.Map<Location>(locationRequestModel);
+                _locationService.Create(location);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return new BadRequestObjectResult(e.Message);
+            }
+            return new OkResult();
         }
-        
+
         [HttpPatch]
         [Route("{locationId}")]
-        public void PatchUpdate([FromRoute]string locationId, [FromBody] PatchLocationRequestModel patchLocationRequestModel)
+        public IActionResult PatchUpdate([FromRoute] string locationId, [FromBody] PatchLocationRequestModel patchLocationRequestModel)
         {
             try
             {
@@ -65,16 +88,26 @@ namespace ChargePointer.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                Console.WriteLine(e.Message);
+                return new BadRequestObjectResult(e.Message);
             }
+            return new OkResult();
         }
 
         [HttpPut]
         [Route("{locationId}")]
-        public List<ChargePoint> UpdateChargePoints(string locationId, [FromBody] ChargePointRequestModel chargePointRequestModel)
-        {          
-            return _locationService.UpdateLocationChargePoints(chargePointRequestModel);
+        public IActionResult UpdateChargePoints([FromRoute] string locationId, [FromBody] ChargePointRequestModel chargePointRequestModel)
+        {
+            try
+            {
+                _locationService.UpdateLocationChargePoints(chargePointRequestModel);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return new BadRequestObjectResult(e.Message);
+            }
+            return new OkResult();
         }
     }
 }

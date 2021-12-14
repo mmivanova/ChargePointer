@@ -25,13 +25,6 @@ namespace ChargePointer.Services.LocationService
             _mapper = mapper;
         }
 
-        public Location GetLocation(string locationId)
-        {
-            var location = _repository.Get(locationId);
-            location.ChargePoints = _chargePointService.GetChargePointsByLocationId(locationId);
-            return location;
-        }
-
         public void PatchUpdate(string id, PatchLocationRequestModel patchLocationRequestModel)
         {
             if (id != patchLocationRequestModel.LocationId)
@@ -43,11 +36,10 @@ namespace ChargePointer.Services.LocationService
             _repository.PatchUpdate(locationToUpdate);
         }
         
-        public List<ChargePoint> UpdateLocationChargePoints(ChargePointRequestModel chargePointRequestModel)
+        public void UpdateLocationChargePoints(ChargePointRequestModel chargePointRequestModel)
         {
             _chargePointService.UpdateChargePoints(chargePointRequestModel);
             _chargePointService.CreateNewChargePointsForLocation(chargePointRequestModel);
-            return _chargePointService.GetAll().ToList();
         }
 
         private Location MapPatchLocationModelToLocation(PatchLocationRequestModel patchLocationRequestModel)
