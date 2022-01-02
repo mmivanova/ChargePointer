@@ -100,7 +100,7 @@ namespace ChargePointer.Controllers
         {
             try
             {
-                _locationService.UpdateLocationChargePoints(chargePointRequestModel);
+                _locationService.UpdateLocationChargePoints(locationId, chargePointRequestModel);
             }
             catch (Exception e)
             {

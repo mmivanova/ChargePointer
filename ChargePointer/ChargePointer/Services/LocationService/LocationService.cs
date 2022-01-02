@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using AutoMapper;
 using ChargePointer.Domain.Entities;
 using ChargePointer.Presentation.Models.ChargePointModel;
@@ -27,19 +25,25 @@ namespace ChargePointer.Services.LocationService
 
         public void PatchUpdate(string id, PatchLocationRequestModel patchLocationRequestModel)
         {
-            if (id != patchLocationRequestModel.LocationId)
-            {
-                throw new ArgumentException("The object you are trying to update and the passed ID doesn't match");
-            }
+            ValidateLocationId(id, patchLocationRequestModel.LocationId);
 
             var locationToUpdate = MapPatchLocationModelToLocation(patchLocationRequestModel);
             _repository.PatchUpdate(locationToUpdate);
         }
         
-        public void UpdateLocationChargePoints(ChargePointRequestModel chargePointRequestModel)
+        public void UpdateLocationChargePoints(string locationId, ChargePointRequestModel chargePointRequestModel)
         {
+            ValidateLocationId(locationId, chargePointRequestModel.LocationId);
             _chargePointService.UpdateChargePoints(chargePointRequestModel);
             _chargePointService.CreateNewChargePointsForLocation(chargePointRequestModel);
+        }
+
+        private void ValidateLocationId(string locationId1, string locationId2)
+        {
+            if (!locationId1.Equals(locationId2))
+            {
+                throw new ArgumentException("The object you are trying to update and the ID from the URL doesn't match");
+            }
         }
 
         private Location MapPatchLocationModelToLocation(PatchLocationRequestModel patchLocationRequestModel)

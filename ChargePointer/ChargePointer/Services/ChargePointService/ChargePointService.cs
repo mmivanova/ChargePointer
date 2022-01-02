@@ -163,7 +163,7 @@ namespace ChargePointer.Services.ChargePointService
             }
         }
 
-        private bool IsNullOrEmpty(List<ChargePoint> chargePoints)
+        private static bool IsNullOrEmpty(List<ChargePoint> chargePoints)
         {
             return chargePoints == null || chargePoints.Count == 1;
         }

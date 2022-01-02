@@ -8,6 +8,6 @@ namespace ChargePointer.Services.LocationService
     public interface ILocationService : IService<Location, string>
     {
         void PatchUpdate(string id, PatchLocationRequestModel patchLocationRequestModel);
-        void UpdateLocationChargePoints(ChargePointRequestModel chargePointRequestModel);
+        void UpdateLocationChargePoints(string locationId, ChargePointRequestModel chargePointRequestModel);
     }
 }
