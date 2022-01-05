@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using ChargePointer.Domain.Entities;
+using ChargePointer.Infrastructure.Domain.Entities;
 
-namespace ChargePointer.Presentation.Models.LocationModel
+namespace ChargePointer.Presentation.Presentation.Models.LocationModel
 {
     public class LocationResponseModel
     {

@@ -1,0 +1,13 @@
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\bin\Debug\net6.0\ChargePointer.Infrastructure.deps.json
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\bin\Debug\net6.0\ChargePointer.Infrastructure.runtimeconfig.json
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\bin\Debug\net6.0\ChargePointer.Infrastructure.dll
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\bin\Debug\net6.0\ref\ChargePointer.Infrastructure.dll
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\bin\Debug\net6.0\ChargePointer.Infrastructure.pdb
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\obj\Debug\net6.0\ChargePointer.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\obj\Debug\net6.0\ChargePointer.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\obj\Debug\net6.0\ChargePointer.Infrastructure.AssemblyInfo.cs
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\obj\Debug\net6.0\ChargePointer.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\obj\Debug\net6.0\ChargePointer.Infrastructure.dll
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\obj\Debug\net6.0\ref\ChargePointer.Infrastructure.dll
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\obj\Debug\net6.0\ChargePointer.Infrastructure.pdb
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Infrastructure\obj\Debug\net6.0\ChargePointer.Infrastructure.genruntimeconfig.cache

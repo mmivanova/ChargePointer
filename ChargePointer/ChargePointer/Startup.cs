@@ -1,10 +1,10 @@
 using AutoMapper;
-using ChargePointer.Data;
-using ChargePointer.Mapper;
-using ChargePointer.Repositories.ChargePointRepository;
-using ChargePointer.Repositories.LocationRepository;
-using ChargePointer.Services.ChargePointService;
-using ChargePointer.Services.LocationService;
+using ChargePointer.Infrastructure.Data;
+using ChargePointer.Presentation.Mapper;
+using ChargePointer.Infrastructure.Repositories.ChargePointRepository;
+using ChargePointer.Infrastructure.Repositories.LocationRepository;
+using ChargePointer.Core.Services.ChargePointService;
+using ChargePointer.Core.Services.LocationService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace ChargePointer
+namespace ChargePointer.Presentation
 {
     public class Startup
     {
@@ -37,10 +37,10 @@ namespace ChargePointer
             {
                 mc.AddProfile(new MappingProfile());
             });
-            
+
             var mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
-            
+
             services.AddDbContext<ChargePointerDbContext>(
                 options => options.UseSqlServer("name=ConnectionStrings:Default"));
 

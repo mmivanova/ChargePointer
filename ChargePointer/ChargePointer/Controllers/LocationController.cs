@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ChargePointer.Domain.Entities;
-using ChargePointer.Presentation.Models.ChargePointModel;
-using ChargePointer.Presentation.Models.LocationModel;
-using ChargePointer.Services.ChargePointService;
-using ChargePointer.Services.LocationService;
+using ChargePointer.Infrastructure.Domain.Entities;
+using ChargePointer.Core.Services.ChargePointService;
+using ChargePointer.Core.Services.LocationService;
+using ChargePointer.Core.RequestModels;
+using ChargePointer.Presentation.Presentation.Models.LocationModel;
 
-
-namespace ChargePointer.Controllers
+namespace ChargePointer.Presentation.Controllers
 {
     [ApiController]
     [Route("api/locations")]
@@ -73,7 +72,7 @@ namespace ChargePointer.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return new BadRequestObjectResult(e.Message);
+                return new BadRequestResult();
             }
             return new OkResult();
         }

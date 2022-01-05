@@ -3,14 +3,34 @@
   "ProjectMap": {
     "688cab7d-b0b2-40d8-9685-e99a6a28aeb4": {
       "ProjectGuid": "688cab7d-b0b2-40d8-9685-e99a6a28aeb4",
-      "DisplayName": "ChargePointer",
+      "DisplayName": "ChargePointer.Presentation",
       "ColorIndex": 0
     },
     "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "c323e944-5c41-477f-9dac-a4a6b583515a": {
+      "ProjectGuid": "c323e944-5c41-477f-9dac-a4a6b583515a",
+      "DisplayName": "ChargePointer.Core",
+      "ColorIndex": 1
+    },
+    "f52f7fd9-5afc-4d98-b3f7-ebc31f4341cf": {
+      "ProjectGuid": "f52f7fd9-5afc-4d98-b3f7-ebc31f4341cf",
+      "DisplayName": "ChargePointer.Infrastructure",
+      "ColorIndex": 2
+    },
+    "696b7726-7ac9-49f6-b900-8adbc1d7a023": {
+      "ProjectGuid": "696b7726-7ac9-49f6-b900-8adbc1d7a023",
+      "DisplayName": "ChargePointer.Tests",
+      "ColorIndex": 3
+    },
+    "b5646712-f7b7-4396-9e32-e2270443cc30": {
+      "ProjectGuid": "b5646712-f7b7-4396-9e32-e2270443cc30",
+      "DisplayName": "ChargePointer.Tests",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 5
 }

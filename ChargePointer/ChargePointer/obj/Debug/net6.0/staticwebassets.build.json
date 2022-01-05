@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "U/LAMDwtrU5YF8/H9S8xAruQ24EekAMAaXv3Hm4MTTU=",
-  "Source": "ChargePointer",
-  "BasePath": "_content/ChargePointer",
+  "Hash": "iMq8Vsyqc1ctJSWChkfyOqhYSc6KY45EXzAIWJPGSyI=",
+  "Source": "ChargePointer.Presentation",
+  "BasePath": "_content/ChargePointer.Presentation",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

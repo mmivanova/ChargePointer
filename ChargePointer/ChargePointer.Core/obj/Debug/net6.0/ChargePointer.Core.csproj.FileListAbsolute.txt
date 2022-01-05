@@ -1,0 +1,15 @@
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\bin\Debug\net6.0\ChargePointer.Core.deps.json
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\bin\Debug\net6.0\ChargePointer.Core.dll
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\bin\Debug\net6.0\ref\ChargePointer.Core.dll
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\bin\Debug\net6.0\ChargePointer.Core.pdb
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\bin\Debug\net6.0\ChargePointer.Infrastructure.dll
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\bin\Debug\net6.0\ChargePointer.Infrastructure.pdb
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\obj\Debug\net6.0\ChargePointer.Core.csproj.AssemblyReference.cache
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\obj\Debug\net6.0\ChargePointer.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\obj\Debug\net6.0\ChargePointer.Core.AssemblyInfoInputs.cache
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\obj\Debug\net6.0\ChargePointer.Core.AssemblyInfo.cs
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\obj\Debug\net6.0\ChargePointer.Core.csproj.CoreCompileInputs.cache
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\obj\Debug\net6.0\ChargePointer.Core.csproj.CopyComplete
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\obj\Debug\net6.0\ChargePointer.Core.dll
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\obj\Debug\net6.0\ref\ChargePointer.Core.dll
+C:\Users\Mihaela Ivanova\workspaces\ChargePointer\ChargePointer\ChargePointer.Core\obj\Debug\net6.0\ChargePointer.Core.pdb

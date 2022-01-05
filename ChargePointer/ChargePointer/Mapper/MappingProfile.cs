@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using ChargePointer.Domain.Entities;
-using ChargePointer.Presentation.Models.ChargePointModel;
-using ChargePointer.Presentation.Models.LocationModel;
+using ChargePointer.Core.RequestModels;
+using ChargePointer.Infrastructure.Domain.Entities;
+using ChargePointer.Presentation.Presentation.Models.ChargePointModel;
+using ChargePointer.Presentation.Presentation.Models.LocationModel;
 
-namespace ChargePointer.Mapper
+namespace ChargePointer.Presentation.Mapper
 {
     public class MappingProfile : Profile
     {

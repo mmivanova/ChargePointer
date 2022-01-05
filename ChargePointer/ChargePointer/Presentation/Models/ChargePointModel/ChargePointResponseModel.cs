@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Security.AccessControl;
-using ChargePointer.Domain.Entities;
+using ChargePointer.Infrastructure.Domain.Entities;
 
-namespace ChargePointer.Presentation.Models.ChargePointModel
+namespace ChargePointer.Presentation.Presentation.Models.ChargePointModel
 {
     public class ChargePointResponseModel
     {

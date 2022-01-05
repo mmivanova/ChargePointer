@@ -29,15 +29,6 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "Humanizer.Core/2.8.26": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Humanizer.dll": {}
-        }
-      },
       "Microsoft.AspNet.WebApi.Client/5.2.7": {
         "type": "package",
         "dependencies": {
@@ -177,23 +168,6 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/5.0.11": {
-        "type": "package",
-        "dependencies": {
-          "Humanizer.Core": "2.8.26",
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.11"
-        },
-        "compile": {
-          "lib/netstandard2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.EntityFrameworkCore.Design.props": {}
-        }
-      },
       "Microsoft.EntityFrameworkCore.Relational/5.0.11": {
         "type": "package",
         "dependencies": {
@@ -218,18 +192,6 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Tools/5.0.11": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "5.0.11"
-        },
-        "compile": {
-          "lib/netstandard2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/_._": {}
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -2189,6 +2151,34 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "ChargePointer.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "ChargePointer.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ChargePointer.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChargePointer.Core.dll": {}
+        }
+      },
+      "ChargePointer.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.11",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11"
+        },
+        "compile": {
+          "bin/placeholder/ChargePointer.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChargePointer.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -2220,22 +2210,6 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "icon.png",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
-      ]
-    },
-    "Humanizer.Core/2.8.26": {
-      "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
-      "type": "package",
-      "path": "humanizer.core/2.8.26",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "humanizer.core.2.8.26.nupkg.sha512",
-        "humanizer.core.nuspec",
-        "lib/netstandard1.0/Humanizer.dll",
-        "lib/netstandard1.0/Humanizer.xml",
-        "lib/netstandard2.0/Humanizer.dll",
-        "lib/netstandard2.0/Humanizer.xml",
-        "logo.png"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.7": {
@@ -2461,21 +2435,6 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/5.0.11": {
-      "sha512": "bleWPdcyO801J85HWko7syP+aGrOBySuGtKEKaRVrdoPgrQEnu8USZilddZW0JP2DKtWOTLHVLpTHZrZY4f9bw==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.design/5.0.11",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "build/netcoreapp3.0/Microsoft.EntityFrameworkCore.Design.props",
-        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll",
-        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.5.0.11.nupkg.sha512",
-        "microsoft.entityframeworkcore.design.nuspec"
-      ]
-    },
     "Microsoft.EntityFrameworkCore.Relational/5.0.11": {
       "sha512": "6JLLJbi5Rh2LicrGi7nnhbmkQGCKi72uhjlAY/ozJr6cJdHOaMCUeWfglgrXUwvA5C+oE814eOxjeTdEF9oTyQ==",
       "type": "package",
@@ -2502,30 +2461,6 @@
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.xml",
         "microsoft.entityframeworkcore.sqlserver.5.0.11.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.Tools/5.0.11": {
-      "sha512": "Ket2Wo146N+2w6eC+0R1jSNZCp4TZY6teY8Z59dS7CfrOr2hESNaGHNFDVmHnvgeeT6qwHZqwaTWn6v/YsVmbw==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/5.0.11",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/netstandard2.1/_._",
-        "microsoft.entityframeworkcore.tools.5.0.11.nupkg.sha512",
-        "microsoft.entityframeworkcore.tools.nuspec",
-        "tools/EntityFrameworkCore.PS2.psd1",
-        "tools/EntityFrameworkCore.PS2.psm1",
-        "tools/EntityFrameworkCore.psd1",
-        "tools/EntityFrameworkCore.psm1",
-        "tools/about_EntityFrameworkCore.help.txt",
-        "tools/init.ps1",
-        "tools/net461/any/ef.exe",
-        "tools/net461/win-x86/ef.exe",
-        "tools/netcoreapp2.0/any/ef.dll",
-        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -7499,16 +7434,24 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "ChargePointer.Core/1.0.0": {
+      "type": "project",
+      "path": "../ChargePointer.Core/ChargePointer.Core.csproj",
+      "msbuildProject": "../ChargePointer.Core/ChargePointer.Core.csproj"
+    },
+    "ChargePointer.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../ChargePointer.Infrastructure/ChargePointer.Infrastructure.csproj",
+      "msbuildProject": "../ChargePointer.Infrastructure/ChargePointer.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
+      "ChargePointer.Core >= 1.0.0",
       "Microsoft.AspNet.WebApi.Core >= 5.2.7",
-      "Microsoft.EntityFrameworkCore >= 5.0.11",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.11",
       "Newtonsoft.Json >= 13.0.1",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
@@ -7519,9 +7462,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mihaela Ivanova\\workspaces\\ChargePointer\\ChargePointer\\ChargePointer\\ChargePointer.csproj",
-      "projectName": "ChargePointer",
-      "projectPath": "C:\\Users\\Mihaela Ivanova\\workspaces\\ChargePointer\\ChargePointer\\ChargePointer\\ChargePointer.csproj",
+      "projectUniqueName": "C:\\Users\\Mihaela Ivanova\\workspaces\\ChargePointer\\ChargePointer\\ChargePointer\\ChargePointer.Presentation.csproj",
+      "projectName": "ChargePointer.Presentation",
+      "projectPath": "C:\\Users\\Mihaela Ivanova\\workspaces\\ChargePointer\\ChargePointer\\ChargePointer\\ChargePointer.Presentation.csproj",
       "packagesPath": "C:\\Users\\Mihaela Ivanova\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mihaela Ivanova\\workspaces\\ChargePointer\\ChargePointer\\ChargePointer\\obj\\",
       "projectStyle": "PackageReference",
@@ -7539,7 +7482,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Mihaela Ivanova\\workspaces\\ChargePointer\\ChargePointer\\ChargePointer.Core\\ChargePointer.Core.csproj": {
+              "projectPath": "C:\\Users\\Mihaela Ivanova\\workspaces\\ChargePointer\\ChargePointer\\ChargePointer.Core\\ChargePointer.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -7563,20 +7510,6 @@
           "Microsoft.AspNet.WebApi.Core": {
             "target": "Package",
             "version": "[5.2.7, )"
-          },
-          "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[5.0.11, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
-            "target": "Package",
-            "version": "[5.0.11, )"
-          },
-          "Microsoft.EntityFrameworkCore.Tools": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[5.0.11, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
